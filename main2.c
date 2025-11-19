@@ -122,4 +122,6 @@ int cmpword_quant(const void *a, const void *b)
     WORD *wa = *(WORD**)a;
     WORD *wb = *(WORD**)b;
     return wb->count - wa->count;
+
 }
+//text1.txt text2.txt text3.txt
