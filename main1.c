@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
 
-// Функция для проверки гласных букв
 int isvowel(int c) {
     switch(tolower(c)) {
         case 'a': 
@@ -14,7 +13,6 @@ int isvowel(int c) {
     return 0;
 }
 
-// Функция для проверки согласных букв
 int isconsonant(int c) {
     return isalpha(c) && !isvowel(c);
 }
@@ -26,18 +24,15 @@ int main() {
     int total = 0, lines = 0, digits = 0, punct = 0, spaces = 0;
     int letters = 0, lower = 0, upper = 0, vowels = 0, consonants = 0;
     
-    // Ввод имени файла с клавиатуры
     printf("Enter filename: ");
     scanf("%s", filename);
     
-    // Открытие файла с проверкой
     F = fopen(filename, "r");
     if (F == NULL) {
         printf("Error: Cannot open file %s\n", filename);
         return 1;
     }
     
-    // Чтение файла посимвольно
     while ((c = fgetc(F)) != EOF) {
         total++;
         
@@ -54,7 +49,6 @@ int main() {
         }
     }
     
-    // Вывод результатов
     printf("File analysis results:\n");
     printf("Total characters: %d\n", total);
     printf("Lines: %d\n", lines);
@@ -69,4 +63,5 @@ int main() {
     
     fclose(F);
     return 0;
+
 }
